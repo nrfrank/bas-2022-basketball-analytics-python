@@ -62,7 +62,7 @@ or `conda`
 
 Finally, install the package and requirements
 
-    > python -m pip install -e .
+    > python -m pip install -e '.[dev]'
 
 ## Usage
 
@@ -76,4 +76,5 @@ See [LICENSE](LICENSE) for more information.
 
 ## Acknowledgements
 
-[@d-flintosh](https://github.com/d-flintosh) contributed significantly to the shape and underlying methodology of this project.
+[@d-flintosh](https://github.com/d-flintosh) contributed significantly to the shape and underlying methods used by this 
+project.
