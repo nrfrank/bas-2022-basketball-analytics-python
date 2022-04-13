@@ -1,58 +1,79 @@
-BAS 2022 - Hands on Basketball Analytics with Python
-==============================
+<h1 align="center">
+  <a href="https://github.com/nrfrank/bas-2022-basketball-analytics-python">
+    <!-- Please provide path to your logo here -->
+    <img src="docs/images/logo.png" alt="Logo" width="200" height="200">
+  </a>
+</h1>
 
-Sample Python project for Basketball Analytics Summit 2022 workshop “How to Begin Your Journey: Hands on Basketball 
-Analytics with Python”
+<div align="center">
+  BAS 2022 - Hands on Basketball Analytics with Python
+  <br />
+  <a href="#about"><strong>Explore the docs »</strong></a>
+</div>
 
-Project Organization
-------------
+<div align="center"> <br /> </div>
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+<details open="open">
+<summary>Table of Contents</summary>
+
+- [About](#about)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+</details>
+
+---
+
+## About
+
+This repository provides materials for the "How to Begin Your Journey: Hands on Basketball Analytics with Python" 
+workshop at the [2022 Basketball Analytics Summit](https://www.basketballanalyticssummit.com/).
 
 
---------
+## Getting Started
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+### Prerequisites
+
+This project requires a working Python installation and was developed using Python 3.9. A Python installation for your
+environment can be downloaded from [Python downloads](https://www.python.org/downloads/) page. The 
+[Python Beginner's Guide](https://wiki.python.org/moin/BeginnersGuide/Download) provides more detailed instructions. 
+Alternatively, the [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) package, 
+dependency, and environment manager is a popular choice to ease the installation and management process.
+
+### Installation
+
+To get started with this workshop, clone the project locally.
+
+    > git clone https://github.com/nrfrank/bas-2022-basketball-analytics-python.git
+
+Next, create a Python virtual environment using either `venv`
+
+    > python3 -m venv path/to/venv
+    > source path/to/venv/bin/activate
+
+or `conda`
+
+    > conda create -n basketball-analytics-python python=3.9
+    > conda activate basketball-analytics-python
+
+Finally, install the package and requirements
+
+    > python -m pip install -e .
+
+## Usage
+
+TBD
+
+## License
+
+This project is licensed under the [**MIT License**](https://choosealicense.com/licenses/mit/).
+
+See [LICENSE](LICENSE) for more information.
+
+## Acknowledgements
+
+[@d-flintosh](https://github.com/d-flintosh) contributed significantly to the shape and underlying methodology of this project.
