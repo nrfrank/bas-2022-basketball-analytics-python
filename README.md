@@ -57,12 +57,17 @@ Next, create a Python virtual environment using either `venv`
 
 or `conda`
 
-    > conda create -n basketball-analytics-python python=3.9
-    > conda activate basketball-analytics-python
+    > conda create -n basketball-analytics-summit python=3.9
+    > conda activate basketball-analytics-summit
 
-Finally, install the package and requirements
+Next, install the package and requirements
 
     > python -m pip install -e '.[dev]'
+
+Finally, if you want to use Jupyter for exploration, reporting, and interactive testing, create a localized kernel for 
+your active environment.
+
+    > python -m ipykernel install --user --name basketball-analytics-summit --display-name "Basketball Analytics Summit (Python 3.9)"
 
 ## Usage
 

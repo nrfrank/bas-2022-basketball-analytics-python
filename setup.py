@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='src',
+    name='bas',
     packages=[p for p in find_packages() if 'bas' in p],
     version='0.1.0',
     description='Sample Python project for Basketball Analytics Summit 2022 workshop “How to Begin Your Journey: Hands on Basketball Analytics',
@@ -12,6 +12,10 @@ setup(
     extras_require={
         'dev': [
             'coverage',
+            'ipykernel',
+            'ipywidgets',
+            'jupytext',
+            'notebook',
             'pytest',
             'pytest-tldr'
         ]
