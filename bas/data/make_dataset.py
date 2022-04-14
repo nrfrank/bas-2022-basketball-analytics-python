@@ -32,6 +32,7 @@ def main(cli_args):
     logger.info(f'Generating shot data for all games in season {args.season}.')
     all_shots = []
     for row in season_df.itertuples():
+        logger.info(f'Getting shots for {row.HOME_ABBREV} v {row.VISITOR_ABBREV} ({row.DATE})')
         shot_df = get_game_shots(row)
         all_shots.append(shot_df)
 
