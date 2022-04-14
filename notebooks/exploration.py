@@ -33,18 +33,3 @@ sample_game = season_df.sample(1).iloc[0]
 shot_df = get_game_shots(sample_game)
 
 # %%
-g = sns.relplot(
-    x='x', 
-    y='y', 
-    hue='make_miss', 
-    col='team', 
-    data=shot_df, 
-    palette=dict(MAKE=sns.color_palette()[2], MISS=sns.color_palette()[3])
-)
-g.set(
-    xlim=(0, 50), 
-    ylim=(0, 42)
-)
-g.fig.suptitle(f"{sample_game.HOME_ABBREV} v {sample_game.VISITOR_ABBREV} - {sample_game.DATE.date()}", y=1.05)
-
-# %%
