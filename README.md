@@ -48,34 +48,44 @@ dependency, and environment manager is a popular choice to ease the installation
 
 To get started with this workshop, clone the project locally.
 
-    > git clone https://github.com/nrfrank/bas-2022-basketball-analytics-python.git
+```copy
+git clone https://github.com/nrfrank/bas-2022-basketball-analytics-python.git
+```
 
 Next, create a Python virtual environment using either `venv`
 
-    > python3 -m venv path/to/venv
-    > source path/to/venv/bin/activate
+```copy
+python3 -m venv ./venv
+source ./venv/bin/activate
+```
 
 or `conda`
 
-    > conda create -n basketball-analytics-summit python=3.9
-    > conda activate basketball-analytics-summit
+```copy
+conda create -n basketball-analytics-summit python=3.9
+conda activate basketball-analytics-summit
+```
 
 Next, install the package and requirements
 
-    > python -m pip install -e '.[dev]'
+```copy
+python -m pip install -e '.[dev]'
+```
 
 Finally, if you want to use Jupyter for exploration, reporting, and interactive testing, create a localized kernel for 
 your active environment.
 
-    > python -m ipykernel install --user --name basketball-analytics-summit --display-name "Basketball Analytics Summit (Python 3.9)"
+```copy
+python -m ipykernel install --user --name basketball-analytics-summit --display-name "Basketball Analytics Summit (Python 3.9)"
+```
 
 ## Usage
 
-TBD
+See documentation in the [tutorial](docs/tutorial.md).
 
 ## License
 
-This project is licensed under the [**MIT License**](https://choosealicense.com/licenses/mit/).
+This project is distributed under the [**MIT License**](https://choosealicense.com/licenses/mit/).
 
 See [LICENSE](LICENSE) for more information.
 
