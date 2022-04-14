@@ -28,4 +28,4 @@ succession (i.e., `git checkout <feature_branch_name>`) and following the releva
 
 ### Steps
 
-1. [Step 0](step-0-project-setup.md) - Project set up and formulation
+1. [Step 0](step-0-project-setup.md) - Project and environment setup.
