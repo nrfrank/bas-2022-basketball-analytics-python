@@ -31,6 +31,20 @@ def get_game_shots(date: str, home: str, visitor: str) -> pd.DataFrame:
 
 
 def process_shot_df(shot_df: pd.DataFrame, date: str, team: str, opponent: str) -> pd.DataFrame:
+    """Enrich a single team's shot data for a given game by converting locations and distances to floats, generating
+    a make/miss label, and adding metadata.
+
+    Args:
+        shot_df (pandas.DataFrame): A single team's shot data as returned by
+            basketball_reference_scraper.shot_charts.get_shot_chart for.
+        date (str): The date of the game the shot data is for.
+        team (str): The team the shot data is for.
+        opponent (str): The opposing team in the game the shot data is for.
+
+    Returns:
+        pandas.DataFrame of enriched shot data.
+
+    """
     shot_df.columns = [c.lower() for c in shot_df.columns]
     shot_df['x'] = shot_df['x'].str.replace(' ft', '').astype(float)
     shot_df['y'] = shot_df['y'].str.replace(' ft', '').astype(float)
