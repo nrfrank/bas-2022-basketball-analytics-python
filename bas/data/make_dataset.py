@@ -2,10 +2,12 @@
 import argparse
 
 import logging
+import multiprocessing
 import sys
 from pathlib import Path
 
 import pandas as pd
+import parmap
 
 from bas.data.shots import get_game_shots
 
@@ -28,13 +30,14 @@ def main(cli_args):
     args = parser.parse_args(cli_args)
     logger.info(f'Getting schedule for season {args.season}.')
     season_df = get_season_schedule(args.season)
-
-    logger.info(f'Generating shot data for all games in season {args.season}.')
-    all_shots = []
-    for row in season_df.itertuples():
-        logger.info(f'Getting shots for {row.HOME_ABBREV} v {row.VISITOR_ABBREV} ({row.DATE})')
-        shot_df = get_game_shots(row)
-        all_shots.append(shot_df)
+    all_games = [(g.DATE, g.HOME_ABBREV, g.VISITOR_ABBREV) for g in season_df.itertuples()]
+    logger.info(f'Generating shot data for all games in season {args.season} in parallel.')
+    all_shots = parmap.starmap(
+        get_game_shots,
+        all_games,
+        pm_pbar=True,
+        pm_processes=multiprocessing.cpu_count() - 2
+    )
 
     logger.info('Compiling game level shot data.')
     all_shots_df = pd.concat(all_shots, ignore_index=True)

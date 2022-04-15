@@ -2,10 +2,31 @@ import pandas as pd
 from basketball_reference_scraper.shot_charts import get_shot_chart
 
 
-def get_game_shots(game) -> pd.DataFrame:
-    shots = get_shot_chart(game.DATE, game.HOME_ABBREV, game.VISITOR_ABBREV)
-    shot_df_home = process_shot_df(shots[game.HOME_ABBREV], game.DATE, game.HOME_ABBREV, game.VISITOR_ABBREV)
-    shot_df_away = process_shot_df(shots[game.VISITOR_ABBREV], game.DATE, game.VISITOR_ABBREV, game.HOME_ABBREV)
+def get_game_shots(date: str, home: str, visitor: str) -> pd.DataFrame:
+    """Retrieve all shots for a given NBA game.
+
+    Args:
+        date (str): The date of the NBA game.
+        home (str): Abbreviation of the home team. See allowed values in bas.data.TEAM_NAME_TO_ABBREV
+        visitor (str): Abbreviation of the away (visiting) team. See allowed values in bas.data.TEAM_NAME_TO_ABBREV
+
+    Returns:
+        pandas.DataFrame of all shots for both teams
+
+    """
+    shots = get_shot_chart(date, home, visitor)
+    shot_df_home = process_shot_df(
+        shots[home],
+        date,
+        home,
+        visitor
+    )
+    shot_df_away = process_shot_df(
+        shots[visitor],
+        date,
+        visitor,
+        home
+    )
     return pd.concat([shot_df_home, shot_df_away], ignore_index=True)
 
 

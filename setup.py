@@ -13,7 +13,9 @@ setup(
         'basketball-reference-scraper==1.0.30',
         'numpy==1.21.0',
         'pandas==1.3.1',
-        'seaborn==0.11.2'
+        'parmap==1.5.3',
+        'seaborn==0.11.2',
+        'tqdm==4.64.0'
     ],
     python_requires='>=3.9',
     extras_require={
